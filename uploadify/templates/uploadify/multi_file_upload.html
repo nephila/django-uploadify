@@ -1,3 +1,4 @@
+{% load url from future %}
 <script type="text/javascript" src="{{ uploadify_path }}swfobject.js"></script>
 <script type="text/javascript" src="{{ uploadify_path }}jquery.uploadify.js"></script>
 <div id="uploadify" class="multi-file-upload"><input id="fileInput" name="fileInput" type="file" /></div>
@@ -5,7 +6,7 @@
 $(document).ready(function() {
 $('#fileInput').uploadify({
 'uploader'  : '{{ uploadify_path }}uploadify.swf',
-'script'    : '{% url uploadify_upload %}',
+'script'    : '{% url "uploadify_upload" %}',
 'cancelImg' : '{{ uploadify_path }}cancel.png',
 'auto'      : true,
 'folder'    : '{{ upload_path }}',
